@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mini Project</title>
+    <link rel="stylesheet" href="assets/index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="nava">
+      <div>
+        <img class="logo" src="https://storage.googleapis.com/danacita-website-v3-prd/website_v3/images/Revou-alasan.original.png" alt="Logo" />
+      </div>
+      <div class="navigation">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="profil.html">Our Profile</a>
+        <a class="nav-link" href="#">Portofolio</a>
+        <a class="nav-link" href="index.html#message-us">Message Us</a>
+      </div>
+    </nav>
+
+    <main>
+              <!-- banner section -->
+              <section id="banner">
+                <div class="container">
+                    <div class="banner-title">
+                        <h1>Hi <span id="nama"></span>, Welcome To My Website</h1>
+                        <p>Ini Latihan Websiteku</p>
+                    </div>
+                    <div>
+                        <img src="https://media.suara.com/pictures/653x366/2022/08/05/56141-ilustrasi-perusahaan-startup.webp"
+                            alt="banner-img" class="img-slideshow" />
+                        <img src="https://i0.wp.com/insight.mbiz.co.id/wp-content/uploads/2018/12/Peralatan-Kantor-Untuk-Startup.jpg?w=1151&ssl=1"
+                            alt="banner-img" class="img-slideshow" />
+                        <img src="https://i0.wp.com/insight.mbiz.co.id/wp-content/uploads/2018/12/Furnitur-kantor-untuk-startup.jpg?resize=768%2C432&ssl=1"
+                            alt="banner-img" class="img-slideshow" />
+                    </div>
+                </div>
+            </section>
+      <div class="container">
+        
+      </div>
+      <section>
+        <div class="headquarter">
+          <h1>Our Headquarter</h1>
+          <div class="headquarter_style">
+            <div class="headquarter_round">
+              <img class="rounded" src="https://assets.pikiran-rakyat.com/crop/0x0:0x0/x/photo/2021/06/13/2726370538.jpg" alt="Semarang" />
+              <p>Semarang</p>
+            </div>
+            <div class="headquarter_round">
+              <img class="rounded" src="https://asset-a.grid.id//crop/0x0:0x0/700x465/photo/2018/06/22/3782938008.jpg" alt="Jakarta" />
+              <p>Jakarta</p>
+            </div>
+            <div class="headquarter_round">
+              <img class="rounded" src="https://img.okezone.com/content/2022/09/08/337/2663563/4-kota-ini-punya-ikon-berupa-binatang-KS9pg2lbsW.jpg" alt="Surabaya" />
+              <p>Surabaya</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="container">
+        <hr />
+      </div>
+      <section class="message-us" >
+        <h1 id="message-us">Message Us</h1>
+        <div class="message-us_input">
+          <div>
+            <form class="message-form" name="message-form" onSubmit="return validateForm()">
+              <div class="al">
+                <label class="label" for="name">Nama </label>
+                <input type="text" id="name" placeholder="Nama" name="name"style="width: 100%"/>
+              </div>
+              <div class="al">
+                <label class="label" for="birthdate">Tanggal Lahir</label>
+                <input type="date"  id="birthdate" min="1990-01-01"  name="birthdate" style="width: 100%"/>
+              </div>
+              <div class="al">
+                <label class="label">Jenis Kelamin</label>
+                <div class="gender">
+                  <input type="radio" id="male" name="gender" value="Laki-laki"/>
+                  <label for="male">Laki-laki</label>
+                  <input type="radio" id="female" name="gender" value="Perempuan" />
+                  <label for="female">Perempuan</label>
+                </div>
+              </div>
+              <div class="al">
+                <label class="label" for="message">Pesan</label>
+                <textarea id="message" cols="32" rows="10" placeholder="Input Pesan" name="message"></textarea>
+              </div>
+              <button class="btn-submit" type="submit">Submit</button>
+            </form>
+          </div>
+          <div class="output-section">
+            <div>
+              <span class="float">Nama</span><span class="span-message">:</span
+              ><span id="output-name"></span>
+            </div>
+            <div>
+              <span class="float">Tanggal Lahir</span><span class="span-message">:</span
+              ><span id="output-birthdate"></span>
+            </div>
+            <div>
+              <span class="float">Jenis Kelamin</span><span class="span-message">:</span
+              ><span id="output-gender"></span>
+            </div>
+            <div>
+              <span class="float">Pesan</span><span class="span-message">:</span
+              ><span id="output-message"></span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p>
+        Julius Flandy 2023 [REVOU]
+      </p>
+    </footer>
+
+    <script type="text/javascript"></script>
+
+    <script>
+    let name = prompt("Inputkan Namamu disini");
+    if (name != "") {
+        document.getElementById("nama").innerText = name;
+    } else {
+        document.getElementById("nama").innerHTML = "Guest";
+    }
+
+      const validateForm = () => {
+        // Deklarasi variabel
+        const name = document.forms["message-form"]["name"].value;
+        const birthDate = document.forms["message-form"]["birthdate"].value;
+        const gender = document.forms["message-form"]["gender"].value;
+        const message = document.forms["message-form"]["message"].value;
+
+        // Validasi input
+        if (name == "" || birthDate == "" || gender == "" || message == "") {
+          alert("Form input tidak boleh ada yang kosong.");
+          return false;
+        }
+
+        // Passing output data
+        setOutput(name, birthDate, gender, message);
+
+        // Menghapus input form ketika di Submit
+        document.forms["message-form"]["name"].value = "";
+        document.forms["message-form"]["birthdate"].value = "";
+        document.querySelector('input[name="gender"]:checked').checked = false;
+        document.forms["message-form"]["message"].value = "";
+
+        return false;
+      };
+
+      const setOutput = (name, birthDate, gender, message) => {
+        // Menampilkan output data
+        document.getElementById("output-name").innerHTML = name;
+        document.getElementById("output-birthdate").innerHTML = birthDate;
+        document.getElementById("output-gender").innerHTML = gender;
+        document.getElementById("output-message").innerHTML = message;
+      };
+      var slideIndex = 1;
+    showDivs(slideIndex);
+
+    function plusDivs(n) {
+        showDivs(slideIndex += n);
+    }
+
+    function showDivs(n) {
+        var i;
+        var imgList = document.getElementsByClassName("img-slideshow");
+        console.log({ imgList });
+        if (n > imgList.length) { slideIndex = 1 }
+        if (n < 1) { slideIndex = imgList.length };
+        for (let i = 0; i < imgList.length; i++) {
+            imgList[i].style.display = "none";
+        }
+        imgList[slideIndex - 1].style.display = "block"
+    }
+
+    setInterval(() => {
+        plusDivs(1);
+    }, 5000)
+    </script>
+</body>
+</html>
